@@ -54,3 +54,11 @@ To keep track of progress (especially with the big gaps between active dev days)
 
 ## License
 MIT (I don't know much about this)
+
+
+## Working Snapshots: [16-08-2025]
+Starting menu
+<img width="1478" height="1007" alt="ss1" src="https://github.com/user-attachments/assets/f0adb934-395d-4851-9980-b011720ef9f9" />
+
+Game as of now
+<img width="1498" height="1015" alt="ss2" src="https://github.com/user-attachments/assets/c9596d72-513d-4785-88ee-396ddd66b833" />
