@@ -486,22 +486,17 @@ class Player(pygame.sprite.Sprite):
             self.energy_regen_timer = 0
             
     def update_coyote_time(self):
-        """Update coyote jump timer"""
-        # Track if we were on ground last frame
-        self.was_on_ground = self.on_ground
-        self.was_at_edge = self.at_edge
-        
-        # If we just left the ground AND we were at the edge, start coyote timer
-        if self.was_on_ground and not self.on_ground and self.was_at_edge:
+        """Update coyote jump timer (classic platformer: always works on leaving ground)"""
+        # If we just left the ground (regardless of edge), start coyote timer
+        if self.was_on_ground and not self.on_ground:
             self.coyote_timer = self.coyote_time
             print(f"Coyote time activated! Timer: {self.coyote_timer}")
         elif self.on_ground:
             self.coyote_timer = 0
-        else:
-            # Decrease coyote timer
-            if self.coyote_timer > 0:
-                self.coyote_timer -= 1
-                
+        elif self.coyote_timer > 0:
+            self.coyote_timer -= 1
+        self.was_on_ground = self.on_ground
+        
     def wall_jump(self):
         """Perform wall jump"""
         if self.wall_sliding and self.wall_jump_timer <= 0:
