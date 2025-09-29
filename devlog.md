@@ -70,3 +70,36 @@ Today was a heavy dev day, and I managed to refine a lot of the foundation into 
 
 
 
+## 2025-09-29 — Aether scaffolding + appv2 migration start
+Today we began extracting a reusable Python-first engine package (aether) and started migrating the game to it while keeping the original app intact.
+
+What we built
+- Aether core
+  - ECS: `World`, `System`, `Component`, `EntityId`
+  - Core app shell and input: `App`, `Input` (edge-press detection), dt clamp
+  - Render: `Camera`
+  - Physics components: `Transform`, `Kinematics`, `Collider`
+  - Platformer layer:
+    - Components: `Controller`, `Params` (tunable physics), `JumpState`, `PlayerTag`
+    - Systems: `InputSystem`, `MovementSystem` (no position integration), `TileCollisionSystem` (axis-ordered resolution)
+    - Wrapper: `Character(world, x, y, w, h, params)` with `add/get` helpers
+
+- Test harness
+  - `test.py` to validate aether loop, input abstraction, and basic physics
+
+- appv2 migration
+  - Built tiles from ASCII level, spawned player via `Character`
+  - Registered aether systems to drive input, movement, collisions
+  - Added coyote time + jump buffering in systems; tuned params (speed=460, jump=-800)
+  - Camera follows player; simple rect rendering retained
+
+Bug fixes and polish
+- Removed double integration; unified axis-wise collision (vertical then horizontal)
+- Fixed horizontal collision to prevent “climbing” through walls
+- Added friction/air damping and max speed clamp to stop idle drift
+
+Notes / next steps
+- Add VariableJumpSystem (hold-to-rise), WallSlide/WallJump, Dash
+- Introduce aether Tilemap service (tile flags for lava/energy), then combat (melee/projectiles), pickups/abilities, enemies/boss, and HUD
+- Continue incremental migration; original app remains untouched for reference
+
