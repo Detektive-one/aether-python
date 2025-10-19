@@ -1,7 +1,7 @@
-# Elemental Metroidvania
+# Aether (Python Game Framework) + Showcase Game
 
 ## Project Vision
-Elemental Metroidvania is a 2D platformer inspired by games like Hollow Knight and Momodora, with a focus on elemental abilities, tight controls, and puzzle-driven progression. The player explores five elemental regions (Earth, Fire, Water, Air, Space), each with unique mechanics, enemies, and bosses. The goal is to restore balance to the elemental realms by collecting fragments, solving puzzles, and defeating bosses.
+I’m building a Python-first, code-driven game framework (aether) with a clean ECS and platformer layer on top of pygame. The game will be a showcase/byproduct: I’ll use aether to build something fun, but the primary focus now is the framework itself, polishing its modules and dev ergonomics.
 
 ## Gameplay Overview
 - **Explore**: Traverse interconnected regions, each with 5 main levels and 2 hidden levels.
@@ -10,29 +10,26 @@ Elemental Metroidvania is a 2D platformer inspired by games like Hollow Knight a
 - **Combat**: Face off against enemies and challenging bosses using melee, ranged, and elemental attacks.
 - **Progression**: Collect fragments to form elemental crystals and stabilize each region. Defeat all bosses to restore balance.
 
-## Key Features
-- **Elemental Regions**: Earth, Fire, Water, Air, Space, each with unique mechanics and puzzles.
-- **Abilities**: 3 unlockable abilities per region, plus special permanent abilities from hidden bosses.
-- **Tight Controls**: Responsive movement, coyote jump, wall jump, variable jump height, and air control.
-- **Puzzle System**: Modular, reusable puzzle framework for elemental challenges.
-- **Boss Fights**: 15+ unique bosses, including mixed-element hidden bosses.
-- **Save/Load**: Persistent progression, ability unlocks, and region completion.
-- **Debug & Dev Tools**: Visual debugging, test levels, and a planned level editor.
+## Aether Highlights (work-in-progress)
+- **ECS core**: World, Systems, Components
+- **Core**: App shell, Input abstraction (edge-press), dt clamp
+- **Render**: Camera (smooth follow)
+- **Physics**: Transform, Kinematics, Collider
+- **Platformer layer**:
+  - Components: Controller, Params (tunable physics), JumpState
+  - Systems: InputSystem, MovementSystem, TileCollisionSystem (axis-ordered)
+  - Character wrapper (player.add/get)
 
-## Controls
-- **WASD**: Move
-- **Space**: Jump (hold for higher jump, tap for short hop)
-- **Q/E/R**: Use abilities
-- **Left Click**: Melee attack
-- **Right Click**: Ranged attack
-- **ESC**: Pause/Menu
-- **Tab**: Inventory (planned)
+## Controls (current test/demo)
+- **A/D**: Move
+- **Space**: Jump (with coyote time + buffer)
+- **ESC**: Quit
 
 ## Technical Overview
-- **Engine**: Python + Pygame
-- **Modular Codebase**: Separated into player, level, settings, puzzle, and progression modules.
-- **Level Format**: ASCII arrays for prototyping, with a planned visual level editor.
-- **Debugging**: On-screen and console debug info for player state, collisions, and mechanics.
+- **Engine**: Python + pygame
+- **Package**: `aether/` (install-less local module for now)
+- **Level Format**: ASCII prototypes → future aether Tilemap
+- **Demo**: `test.py` (framework sanity), `appv2.py` (framework + level tiles)
 - **Requirements**: See `requirements.txt` (pygame>=2.0.0)
 
 ## Getting Started
@@ -40,9 +37,10 @@ Elemental Metroidvania is a 2D platformer inspired by games like Hollow Knight a
    ```
    pip install -r requirements.txt
    ```
-2. Run the game:
+2. Run the demo tests:
    ```
-   python app.py
+   python test.py
+   python appv2.py
    ```
 
 ## Development Notes
@@ -56,9 +54,5 @@ To keep track of progress (especially with the big gaps between active dev days)
 MIT (I don't know much about this)
 
 
-## Working Snapshots: [16-08-2025]
-Starting menu
-<img width="1478" height="1007" alt="ss1" src="https://github.com/user-attachments/assets/f0adb934-395d-4851-9980-b011720ef9f9" />
-
-Game as of now
-<img width="1498" height="1015" alt="ss2" src="https://github.com/user-attachments/assets/c9596d72-513d-4785-88ee-396ddd66b833" />
+## Working Snapshots
+Keeping screenshots light until aether stabilizes; the showcase game will follow.
