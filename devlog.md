@@ -103,3 +103,48 @@ Notes / next steps
 - Introduce aether Tilemap service (tile flags for lava/energy), then combat (melee/projectiles), pickups/abilities, enemies/boss, and HUD
 - Continue incremental migration; original app remains untouched for reference
 
+---
+
+## 2025-01-27 — Framework-First Pivot & Clean Slate
+
+Today marked a significant strategic shift in the project's direction. After reviewing the codebase and development approach, we've decided to **prioritize the aether framework as the primary focus**, with any game serving purely as a showcase and testing ground.
+
+### Major Changes Made
+
+**Philosophy Shift:**
+- **Framework-first approach**: Aether is now the main product, not just a means to an end
+- **Game as showcase**: Any game built with aether serves to demonstrate and validate the framework's capabilities
+- **Tool quality focus**: Emphasis on creating excellent, reusable development tools rather than completing a specific game
+
+**Codebase Cleanup:**
+- **Removed legacy code**: Deleted all archived and unnecessary game-specific code
+- **Eliminated app.py dependencies**: Since the original game concept is changing, removed all references to the old monolithic app.py approach
+- **Fresh start approach**: Clean slate for future game development using aether as the foundation
+
+**Documentation Updates:**
+- **Created PROGRESS.md**: New progress tracking document to monitor framework development milestones
+- **Created MASTER_INSTRUCTIONS.md**: Comprehensive development guidelines and workflow documentation
+- **Updated project structure**: Clarified the framework-first development methodology
+
+**Strategic Direction:**
+- **Aether polishing priority**: Focus on making the framework robust, well-documented, and developer-friendly
+- **Modular architecture**: Continue building clean, reusable components and systems
+- **Developer experience**: Prioritize ease of use and clear APIs for future framework users
+- **Iterative improvement**: Small, testable increments that enhance the framework's capabilities
+
+### What This Means Going Forward
+
+**Immediate Focus:**
+- Polish and improve existing aether systems (ECS, physics, platformer layer)
+- Add missing core systems (variable jump, wall mechanics, dash)
+- Improve documentation and developer ergonomics
+- Build comprehensive test suite for framework validation
+
+**Long-term Vision:**
+- Aether becomes a mature, well-documented Python game development framework
+- Framework serves as a solid foundation for any 2D game project
+- Clean APIs and excellent developer experience are the primary success metrics
+- Game projects become natural byproducts of framework development and testing
+
+This pivot represents a more sustainable and focused approach to the project, prioritizing the creation of valuable development tools over the completion of a specific game concept.
+

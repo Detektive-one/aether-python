@@ -1,46 +1,62 @@
-# Aether (Python Game Framework) + Showcase Game
+# Aether - Python Game Development Framework
 
 ## Project Vision
-I’m building a Python-first, code-driven game framework (aether) with a clean ECS and platformer layer on top of pygame. The game will be a showcase/byproduct: I’ll use aether to build something fun, but the primary focus now is the framework itself, polishing its modules and dev ergonomics.
+**Aether is a Python-first, code-driven game development framework** built on pygame with a clean ECS architecture and modular platformer systems. The primary focus is creating excellent, reusable development tools that make 2D game development in Python intuitive and powerful.
 
-## Gameplay Overview
-- **Explore**: Traverse interconnected regions, each with 5 main levels and 2 hidden levels.
-- **Abilities**: Unlock and master elemental powers unique to each region. Only one ability per region can be carried forward, but hidden bosses grant permanent cross-region abilities.
-- **Puzzles**: Solve region-specific puzzles using your abilities to collect fragments and progress.
-- **Combat**: Face off against enemies and challenging bosses using melee, ranged, and elemental attacks.
-- **Progression**: Collect fragments to form elemental crystals and stabilize each region. Defeat all bosses to restore balance.
+Any games built with aether serve purely as showcases and testing grounds to validate and demonstrate the framework's capabilities.
 
-## Aether Highlights (work-in-progress)
-- **ECS core**: World, Systems, Components
-- **Core**: App shell, Input abstraction (edge-press), dt clamp
-- **Render**: Camera (smooth follow)
-- **Physics**: Transform, Kinematics, Collider
-- **Platformer layer**:
-  - Components: Controller, Params (tunable physics), JumpState
-  - Systems: InputSystem, MovementSystem, TileCollisionSystem (axis-ordered)
-  - Character wrapper (player.add/get)
+## Framework Overview
+- **ECS Architecture**: Clean Entity-Component-System design with World, Systems, and Components
+- **Modular Systems**: Input handling, physics, rendering, and platformer mechanics as separate, reusable modules
+- **Developer-Focused**: Clean APIs, comprehensive documentation, and excellent developer experience
+- **Extensible Design**: Easy to add new systems, components, and game mechanics
+- **Python-First**: Built specifically for Python developers with modern practices and clean code
 
-## Controls (current test/demo)
-- **A/D**: Move
+## Core Framework Components
+
+### ECS System
+- **World**: Entity and component management with efficient querying
+- **System**: Base class for game logic with priority-based execution order
+- **Component**: Data-only classes for entity properties
+- **EntityId**: Unique identifiers for entities
+
+### Core Modules
+- **App**: Minimal pygame application shell with frame management
+- **Input**: Edge-press detection and configurable key mappings
+- **Camera**: Smooth following camera system
+
+### Physics & Rendering
+- **Transform**: Position and rotation data
+- **Kinematics**: Velocity and acceleration with ground detection
+- **Collider**: Collision detection with configurable solidity
+- **RenderSystem**: Sprite rendering and camera integration
+
+### Platformer Layer
+- **Components**: Controller, Params (tunable physics), JumpState, PlayerTag
+- **Systems**: InputSystem, MovementSystem, TileCollisionSystem (axis-ordered)
+- **Character**: Wrapper class for easy player entity creation
+
+## Current Demo Controls
+- **A/D**: Move left/right
 - **Space**: Jump (with coyote time + buffer)
-- **ESC**: Quit
+- **ESC**: Quit application
 
 ## Technical Overview
-- **Engine**: Python + pygame
-- **Package**: `aether/` (install-less local module for now)
-- **Level Format**: ASCII prototypes → future aether Tilemap
-- **Demo**: `test.py` (framework sanity), `appv2.py` (framework + level tiles)
-- **Requirements**: See `requirements.txt` (pygame>=2.0.0)
+- **Engine**: Python 3.7+ + pygame 2.0+
+- **Architecture**: ECS (Entity-Component-System) with modular design
+- **Package**: `aether/` (local framework module)
+- **Demo**: `test.py` (framework validation), `appv2.py` (platformer showcase)
+- **Requirements**: See `requirements.txt`
 
 ## Getting Started
-1. Install Python 3.7+ and Pygame:
-   ```
+1. Install dependencies:
+   ```bash
    pip install -r requirements.txt
    ```
-2. Run the demo tests:
-   ```
-   python test.py
-   python appv2.py
+2. Run framework tests:
+   ```bash
+   python test.py          # Basic framework validation
+   python appv2.py         # Platformer demo showcase
    ```
 
 ## Development Notes
@@ -51,8 +67,12 @@ The current MVP came together in about 6–8 hours of AI-assisted coding, with m
 To keep track of progress (especially with the big gaps between active dev days), I’m also maintaining a devlog. It helps document changes, thought processes, and decisions so that the project doesn’t lose momentum across these cycles.
 
 ## License
-MIT (I don't know much about this)
+MIT License
 
+## Contributing
+Aether is focused on creating the best possible Python game development framework. Contributions that improve developer experience, add useful systems, or enhance documentation are welcome.
 
-## Working Snapshots
-Keeping screenshots light until aether stabilizes; the showcase game will follow.
+## Roadmap
+- **Short-term**: Variable jump, wall mechanics, dash system
+- **Medium-term**: Tilemap service, combat systems, enemy framework
+- **Long-term**: Advanced rendering, audio integration, level editor tools
