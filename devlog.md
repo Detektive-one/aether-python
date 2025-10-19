@@ -148,7 +148,7 @@ This pivot represents a more sustainable and focused approach to the project, pr
 
 ---
 
-## 2025-10-20 — Pivot: Tile/World Editor-First Foundation
+## 2025-10-19 — Pivot: Tile/World Editor-First Foundation
 
 After reviewing the emerging needs of Aether and reflecting on modern best practices (Celeste, indie toolchains, etc.), we are pivoting away from starting with movement/character/platformer core systems and **prioritizing the creation of a robust, modular layered tile/chunk/world editing system** as the initial foundation.
 
@@ -169,3 +169,9 @@ Platformer, movement, and genre modules will be layered on top of this solid wor
 
 This is now the central dev priority going forward.
 
+**Progress made on the tile/world editor:**
+
+- Created a demo prototype file to test out binary data conversion, data loading and creating simple levels using said binary files
+- implemented a layer based system for world creation
+- Created separate layer binary files
+- implemented png based sprite/tile loading and using mask for collision detection and integrate it with the binary data loading
