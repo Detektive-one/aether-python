@@ -2,6 +2,7 @@
 
 ## Philosophy
 - **Aether framework is the primary product**; any game serves purely as a showcase and testing ground.
+- **World-building is the foundation:** We begin by developing a robust, modular, layered tile/chunk/room editing system. All game/tool features are layered on top of this.
 - **Tool quality over game completion**: Focus on creating excellent, reusable development tools.
 - **Small, testable increments**: Build features incrementally with clear APIs and comprehensive testing.
 - **Developer experience priority**: Make the framework intuitive, well-documented, and easy to extend.
@@ -31,16 +32,14 @@
 
 ## Framework Development Milestones
 
-### ✅ Completed Foundation
-- [x] ECS/core/render/physics scaffolding
-- [x] Platformer basic: input, move, coyote/buffer, collisions
-- [x] Character wrapper and entity management
-- [x] Framework validation and showcase demos
+### 🚩 Immediate Foundation: Layered World/Chunk/Tile Editor (in progress)
+- [ ] Design binary layer/chunk storage for single room (multiple canvas-style layers)
+- [ ] Implement core data structures and loader/renderer
+- [ ] Per-layer API for create/read/write/modify
+- [ ] Clear documentation of system and layering model for future tools
 
-### 🔄 Next Framework Targets (Short-term)
-1) **VariableJumpSystem**: Hold-to-rise jump mechanics
-2) **WallSlideSystem + WallJumpSystem**: Wall interaction systems
-3) **DashSystem**: Impulse movement with cooldown
+### 🔄 Short-term: Platformer and Game Modules (after editor foundation)
+- VariableJumpSystem, WallSlide, WallJump, DashSystem, etc. layered on top
 
 ### 📋 Medium-term Framework Goals
 - **Aether Tilemap Service**: Tile-based level system with flags and queries

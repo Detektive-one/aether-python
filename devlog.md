@@ -68,8 +68,6 @@ Today was a heavy dev day, and I managed to refine a lot of the foundation into 
 
 ---
 
-
-
 ## 2025-09-29 — Aether scaffolding + appv2 migration start
 Today we began extracting a reusable Python-first engine package (aether) and started migrating the game to it while keeping the original app intact.
 
@@ -147,4 +145,27 @@ Today marked a significant strategic shift in the project's direction. After rev
 - Game projects become natural byproducts of framework development and testing
 
 This pivot represents a more sustainable and focused approach to the project, prioritizing the creation of valuable development tools over the completion of a specific game concept.
+
+---
+
+## 2025-10-20 — Pivot: Tile/World Editor-First Foundation
+
+After reviewing the emerging needs of Aether and reflecting on modern best practices (Celeste, indie toolchains, etc.), we are pivoting away from starting with movement/character/platformer core systems and **prioritizing the creation of a robust, modular layered tile/chunk/world editing system** as the initial foundation.
+
+**Rationale/Direction:**
+- The highest-leverage tool for any 2D game (platformer or otherwise) is a flexible, visual, chunk-based layered world/room/canvas system.
+- By modeling game rooms/chunks as stacks of independent layers (background, parallax, particles, ground, collision, foreground, UI, etc.), we can enable both creative freedom and future-proof extensibility.
+- Each layer is an independently editable "canvas," and future editors/UIs can allow experimentation and iteration on a per-layer basis.
+- Storage will use efficient binary chunks per-room per-layer for now (with a path to later HDF5-compressed or SQLite/JSON sparse backends).
+- Metadata & entities are handled separately for maximum composability.
+
+**Immediate Plan:**
+- Design binary chunk format for a single room with arbitrary layers
+- Implement core data structures and loader/renderer/streaming APIs
+- Create programmatic interfaces for adding, removing, and manipulating layers
+- Document the layered map/tile system as the base for all future Aether tools
+
+Platformer, movement, and genre modules will be layered on top of this solid world-building/creation system. This ensures flexibility and makes Aether suitable for a wide range of 2D games and tools.
+
+This is now the central dev priority going forward.
 
