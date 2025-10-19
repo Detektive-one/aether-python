@@ -1,5 +1,7 @@
 # Aether - Python Game Development Framework
 
+_For our comprehensive product roadmap and strategic development plan, see [PLAN.md](PLAN.md)._ 
+
 ## Project Vision
 **Aether is a Python-first, code-driven game development framework** built on pygame with a clean ECS architecture and modular platformer systems. The primary focus is creating excellent, reusable development tools that make 2D game development in Python intuitive and powerful.
 
