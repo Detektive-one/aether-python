@@ -105,7 +105,7 @@ Notes / next steps
 
 ---
 
-## 2025-01-27 — Framework-First Pivot & Clean Slate
+## 2025-10-19 — Framework-First Pivot & Clean Slate
 
 Today marked a significant strategic shift in the project's direction. After reviewing the codebase and development approach, we've decided to **prioritize the aether framework as the primary focus**, with any game serving purely as a showcase and testing ground.
 
